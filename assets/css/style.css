@@ -1,0 +1,349 @@
+.item1 { grid-area: navegacion; }
+.item2 { grid-area: busqueda; }
+.item3 { grid-area: principal; }
+.item4 { grid-area: footer; }
+
+body{
+margin:0%;
+height: auto;
+}
+
+@media(max-width: 576px){
+
+.grid-containers{
+    display: grid;
+    grid-template-areas:
+    "navegacion navegacion navegacion"
+    "busqueda busqueda busqueda"
+    "principal principal principal"
+    "footer footer footer";
+    grid-template-rows: 7vh 10vh 75vh 8vh;
+}
+
+
+.navegacion {
+    grid-area: navegacion;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(68, 68, 225);
+    color: white;
+}
+
+.navegacion p{
+display: none;
+}
+
+.navegacion span{
+    display: flex;
+    padding: 20px;
+}
+
+.navegacion .logo {
+    display: flex;
+    align-items: center;
+    padding-right: 27vh;
+}
+
+
+.busqueda {
+    grid-area: busqueda;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgb(218, 217, 214);
+    padding: 20px;
+}
+
+.busqueda label {
+    margin: 10px;
+}
+.busqueda select{
+    width: 85%;
+}
+
+.principal {
+    grid-area: principal;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card1 {
+    background-color: #f9f9f9;
+    padding: 1vh 1vh;
+    text-align: center;
+    border: 1px solid #ccc; 
+}
+
+.card{
+display: none;
+}
+
+.card1 img {
+    width: 85%; 
+    height: 480px;
+    object-fit:fill ;
+    margin: 0px;
+}
+
+.card1 button {
+    background-color: blue; 
+    color: white;
+}
+
+.card p {
+    margin-top: 10px;
+}
+.pagination {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+}
+
+.pageNav-main {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.pageNav-page {
+    border: 1px solid #ccc;
+    margin-right: 5px;
+}
+
+.pageNav-page a {
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #000;
+}
+
+.pageNav-page--current {
+    font-weight: bold;
+}
+
+.pageNav-jump {
+    margin-left: 5px;
+}
+
+.pageNav-button {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 5px 10px;
+    margin-left: 5px;
+    color: #000;
+    cursor: pointer;
+}
+
+.pageNav-button:hover {
+    background-color: #f0f0f0;
+}
+
+.pageNav-button--prev {
+    margin-right: 5px;
+}
+
+.footer {
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: blue;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer .social-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.footer .social-icons span {
+    padding-top: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.footer p{
+    margin: 0%;
+}
+}
+
+@media (min-width: 577px) {
+    .grid-containers {
+        display: grid;
+        grid-template-areas:
+            "navegacion busqueda busqueda"
+            "navegacion principal principal"
+            "navegacion principal principal"
+            "footer principal principal";
+            grid-template-rows: 0.5fr 2fr 2fr 1fr;
+            grid-template-columns: 2fr 5fr 5fr;
+            height: 100vh;
+            overflow: hidden;
+    }
+
+    .navegacion {
+        grid-area: navegacion;
+        display: grid;
+        background-color: rgb(68, 68, 225);
+        color: white;
+        justify-items: center;
+    }
+
+    .logo{
+        display: flex;
+        align-items: baseline
+    }
+    .logo span{
+        padding-right: 5px;
+    }
+    .menu-icon span{
+        display: none;
+    }
+
+    div .navegacion{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start
+    }
+
+    .busqueda {
+        grid-area: busqueda;
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(218, 217, 214);
+        padding: 20px;
+        align-items: center
+    }
+
+    .busqueda label {
+        margin: 5px;
+    }
+
+    .busqueda select {
+        width: 90%;
+    }
+
+    .principal{
+        grid-area: principal;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-gap: 20px;
+        align-content: stretch;
+        align-items: baseline;
+        justify-items: center;
+}
+    
+    .card {
+        background-color: #f9f9f9;
+        text-align: center;
+        border: 1px solid #ccc;
+        padding: 10px;
+}
+
+.card1{
+    display: none;
+}
+
+.pagination {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card img {
+    width: 100%; 
+    height: 150px;
+    object-fit: fill;
+    margin: 5px;
+}
+
+.card button {
+        background-color: blue; 
+        color: white;
+    }
+
+    .card p {
+        margin-top: 10px;
+    }
+
+
+    .pageNav-main {
+        list-style: none;
+        display: flex;
+        padding: 0;
+        margin: 0;
+    }
+
+    .pageNav-page {
+        border: 1px solid #ccc;
+        margin-right: 5px;
+    }
+
+    .pageNav-page a {
+        display: block;
+        padding: 5px 10px;
+    text-decoration: none;
+    color: #000;
+}
+
+.pageNav-page--current {
+    font-weight: bold;
+}
+
+.pageNav-jump {
+    margin-left: 5px;
+}
+
+.pageNav-button {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 5px 10px;
+    margin-left: 5px;
+    color: #000;
+    cursor: pointer;
+}
+
+.pageNav-button:hover {
+    background-color: #f0f0f0;
+}
+
+.pageNav-button--prev {
+    margin-right: 5px;
+}
+
+.footer {
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: blue;
+    color: white;
+    justify-content: space-evenly
+}
+
+.footer .social-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.footer .social-icons span {
+    padding-top: 10px;
+    font-size: 25px;
+    height: 30px;
+    width: 30px;
+}
+
+.footer p {
+    display: flex;
+    padding-left: 20px;
+}
+}
