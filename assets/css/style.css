@@ -3,10 +3,64 @@
 .item3 { grid-area: principal; }
 .item4 { grid-area: footer; }
 
+@keyframes Entrada {
+    from {
+    opacity: 0;
+    transform: scale(0.8);
+    }
+    to {
+    opacity: 1;
+    transform: scale(1);
+    }
+}
+@keyframes pulso {
+    0% {
+    transform: scale(1);
+    }
+    50% {
+    transform: scale(1.1);
+    }
+    100% {
+    transform: scale(1);
+    }
+}
+
 body{
 margin:0%;
 height: auto;
 }
+
+main.principal img {
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+    transition: transform 0.3s ease;
+    border-radius: 5%;
+    cursor: pointer;
+}
+
+main.principal img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+    border-radius: 8%; 
+    transform-origin: center center;
+}
+
+.navegacion img {
+    width: 100%;
+    max-width: 35px;
+    height: auto;
+}
+
+.navegacion img {
+    opacity: 100;
+    transform: scale(0.8);
+    animation: Entrada 1s ease forwards;
+    animation-name: pulso;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
 
 @media(max-width: 576px){
 
@@ -43,6 +97,11 @@ display: none;
     display: flex;
     align-items: center;
     padding-right: 27vh;
+    align-items: center;
+}
+
+.navegacion img{
+    padding: 2vh;
 }
 
 
@@ -156,6 +215,7 @@ display: none;
     position: fixed;
     bottom: 0;
     width: 100%;
+    justify-content: center;
 }
 
 .footer .social-icons {
@@ -166,7 +226,23 @@ display: none;
 .footer .social-icons span {
     padding-top: 10px;
     width: 30px;
-    height: 30px;
+}
+
+.footer div.llamanos{
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer div span{
+    padding-right: 1vh;
+}
+
+.footer div.escribenos{
+    display: flex;
+    flex-direction: row;
 }
 
 .footer p{
@@ -188,6 +264,11 @@ display: none;
             overflow: hidden;
     }
 
+    .navegacion img {
+        max-width: 40px; 
+        padding-right: 1vh;
+    }
+
     .navegacion {
         grid-area: navegacion;
         display: grid;
@@ -198,7 +279,7 @@ display: none;
 
     .logo{
         display: flex;
-        align-items: baseline
+        align-items: center;
     }
     .logo span{
         padding-right: 5px;
@@ -335,6 +416,24 @@ display: none;
     justify-content: center;
 }
 
+.footer .social-icons .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.footer .social-icons .social-link .mdi {
+    color: white;
+    font-size: 18px;
+}
+
+.footer .social-icons .social-link:hover {
+    cursor: pointer;
+}
+
 .footer .social-icons span {
     padding-top: 10px;
     font-size: 25px;
@@ -345,5 +444,13 @@ display: none;
 .footer p {
     display: flex;
     padding-left: 20px;
+}
+
+.footer div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+    padding-left: 2%;
 }
 }
