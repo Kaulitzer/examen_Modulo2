@@ -84,7 +84,7 @@ body {
     color: white;
 }
 
-.navegacion p{
+.navegacion a{
 display: none;
 }
 
@@ -278,10 +278,30 @@ display: none;
         justify-items: center;
     }
 
-    .logo{
+    .navegacion .logo{
+        color: white;
+        display: flex;
+        flex-direction: row;
+        padding-top: 1vh;
+    }
+
+    .enlaces{
         display: flex;
         align-items: center;
+        flex-direction: row;
+        color: white;
     }
+
+    .enlaces a{
+        color: white;
+        padding: 1vh 0vh;
+    }
+
+    .navegacion div{
+        display: flex;
+        flex-direction: column;
+    }
+
     .logo span{
         padding-right: 5px;
     }
